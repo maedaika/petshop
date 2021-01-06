@@ -10,7 +10,7 @@ import br.com.treinamento.petshop.json.Response;
 
 public interface IPets {
 
-    public ResponseEntity<Response> cadastraPets(@RequestParam Integer idPets,@RequestParam String nome,@RequestParam String nomeDono,@RequestParam String endereco,@RequestParam Date dataNascimento) throws BDException;
+    public ResponseEntity<Response> cadastraPets(@RequestParam Integer idPets,@RequestParam String nome,@RequestParam String nomeDono,@RequestParam String endereco,@RequestParam String dataNascimento) throws BDException;
 	 
 	 public ResponseEntity<Response> deleteTodosPets() throws BDException;
 	 

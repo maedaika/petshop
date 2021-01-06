@@ -2,6 +2,7 @@ package br.com.treinamento.petshop.bo;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
@@ -20,7 +21,8 @@ import br.com.treinamento.petshop.repository.ClienteRepository;
 @Configuration
 @ComponentScan("br.com.treinamento")
 public class ClienteBO implements IClienteBO {
-
+	
+	@Autowired
 	ClienteRepository clienteRepository;
 	
 	@Override

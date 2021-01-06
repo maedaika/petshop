@@ -1,6 +1,8 @@
 package br.com.treinamento.petshop.bo;
 
 import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
@@ -21,6 +23,7 @@ public class PetsBO implements IPetsBO {
 	/*
 	 * estancia da interface de persistencia (Repository)
 	 */
+	@Autowired
 	PetsRepository petsRepository; 
 	
 	@Override
@@ -38,7 +41,7 @@ public class PetsBO implements IPetsBO {
 	}
 
 	@Override
-	public void deleteTodasProdutos() throws BDException {
+	public void deleteTodasPets() throws BDException {
 		try {
 			petsRepository.deleteAll();
 		} catch (Exception e) {
@@ -68,7 +71,7 @@ public class PetsBO implements IPetsBO {
 		throw new BDException(e.getMessage());
   }
 
-}
+} 
 
 	@Override
 	public void recebePets(Pets pets) throws BDException {

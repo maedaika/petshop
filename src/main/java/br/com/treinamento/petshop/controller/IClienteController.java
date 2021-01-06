@@ -10,7 +10,7 @@ import br.com.treinamento.petshop.exception.BDException;
 import br.com.treinamento.petshop.json.Response;
 
 public interface IClienteController {
-    public ResponseEntity<Response> cadastraCliente(@RequestParam Integer idCliente,@RequestParam String nome,@RequestParam String endereco,@RequestParam Date dataNascimento,@RequestParam Pets pets) throws BDException;
+    public ResponseEntity<Response> cadastraCliente(@RequestParam String nome,@RequestParam String endereco,@RequestParam String dataNascimento,@RequestParam String idPets) throws BDException;
 	 
 	 public ResponseEntity<Response> deleteTodosCliente() throws BDException;
 	 

@@ -12,8 +12,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
-@Table(name="tbl_cliente")
 //sequencia criada automaticamente
+@Table(name="tbl_cliente")
 @SequenceGenerator(name="tbl_cliente_idcliente_seq", sequenceName="tbl_cliente_idcliente_seq",initialValue=1, allocationSize=1)
 @Entity
 public class Cliente implements Serializable{
@@ -21,16 +21,22 @@ public class Cliente implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	//Sequence referenciando ao a chave da tabela, coluna IDPRODUTO
+	
 	@Id	
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "tbl_cliente_idcliente_seq")
 	@Column(name="idCliente")
 	private Integer idCliente;
+	
 	@Column(name="nome")
 	private String nome;
+	
 	@Column(name="endereco")
 	private String endereco;
+	
 	@Column(name="dataNascimento")
 	private Date dataNascimento;
+	
+	@Column(name="pets")
 	private Pets pets;
 	
 	

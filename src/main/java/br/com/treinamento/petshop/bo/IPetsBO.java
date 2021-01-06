@@ -10,7 +10,7 @@ public interface IPetsBO {
 	
 	public Pets cadastraPets(Pets pets) throws BDException;
 	
-	public void deleteTodasProdutos() throws BDException;	
+	public void deleteTodasPets() throws BDException;	
 	
 	public ArrayList<Pets> buscaTodasPets() throws BDException;
 	
