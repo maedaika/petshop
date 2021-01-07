@@ -37,8 +37,9 @@ public class ClienteController implements IClienteController {
 			cliente.setEndereco(endereco);
 			//cliente.setIdCliente(idCliente);
 			Pets pets = new Pets();
-			pets.setIdPets(new Integer(idPets));
-			cliente.setPets(pets);
+			//pets.setIdPets(new Integer(idPets));
+			//cliente.setPets(pets);
+			cliente.setPets(new Integer(idPets));
 			
 			response.setModeloRetorno(clienteBO.cadastraCliente(cliente));
 			response.setMensagensRetorno("Cadastro realizado com sucesso");
@@ -71,6 +72,18 @@ public class ClienteController implements IClienteController {
 		try {
 			response.setModeloRetorno(clienteBO.buscaTodasCliente());
 			response.setMensagensRetorno("Todas os produtos contidas na base de dados!!!");
+		} catch (Exception e) {
+			response.setMensagensRetorno(e.getMessage());
+		}
+		return ResponseEntity.ok(response);
+	}
+	@Override
+	@RequestMapping(value = "/cliente/ler/lerArquivo", method =  RequestMethod.POST)
+	public ResponseEntity<Response> LerArquivos() throws BDException {
+		Response response = new Response();
+		try {
+			response.setModeloRetorno(clienteBO.lerArquivos());
+			response.setMensagensRetorno("Leitura de arquivos");
 		} catch (Exception e) {
 			response.setMensagensRetorno(e.getMessage());
 		}

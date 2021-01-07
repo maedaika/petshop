@@ -37,13 +37,14 @@ public class Cliente implements Serializable{
 	private Date dataNascimento;
 	
 	@Column(name="pets")
-	private Pets pets;
 	
+	private Integer pets;
 	
-	public Pets getPets() {
+
+	public Integer getPets() {
 		return pets;
 	}
-	public void setPets(Pets pets) {
+	public void setPets(Integer pets) {
 		this.pets = pets;
 	}
 	public Integer getIdCliente() {
@@ -70,7 +71,7 @@ public class Cliente implements Serializable{
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	public Cliente(Integer idCliente, String nome, String endereco, Date dataNascimento, Pets pets) {
+	public Cliente(Integer idCliente, String nome, String endereco, Date dataNascimento, Integer pets) {
 		super();
 		this.idCliente = idCliente;
 		this.nome = nome;

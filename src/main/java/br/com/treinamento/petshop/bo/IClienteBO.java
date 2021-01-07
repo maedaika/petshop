@@ -1,5 +1,6 @@
 package br.com.treinamento.petshop.bo;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import br.com.treinamento.petshop.domain.Cliente;
@@ -12,5 +13,5 @@ public interface IClienteBO {
 	public ArrayList<Cliente> buscaTodasCliente() throws BDException;
 	public void deletaCliente(Integer idCliente )throws BDException;
 	public void recebeCliente(Cliente cliente)throws BDException;
-	
+	public ArrayList<Cliente> lerArquivos() throws BDException, IOException;
 }
